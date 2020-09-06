@@ -1,0 +1,17 @@
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  background: linear-gradient(to right, orange, orangered);
+  height: 5rem;
+}
+img{
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+span{
+  font-size: large;
+  // font-family: ;
+}

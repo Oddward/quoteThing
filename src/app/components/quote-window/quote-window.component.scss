@@ -1,0 +1,37 @@
+blockquote{
+  // display: flex;
+  // justify-content: center;
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  margin: 10%;
+  border-style: solid;
+  overflow: visible;
+}
+footer::before{
+  content: '\2015\00A0';
+}
+// marks
+.marks{
+  position: absolute;
+  z-index: 20;
+  font-size: 5rem;
+  font-family: sans-serif;
+
+  .mark-tl{
+    // content: '\201C';
+    top: -50%;
+    left: -50%;
+    &::before{
+      content: '\201C';
+    }
+  }
+  .mark-br{
+    content: '\201D';
+    right: -50%;
+    bottom: -50%;
+    // &::before{
+    //   content: '\201D';
+    // }
+  }
+}

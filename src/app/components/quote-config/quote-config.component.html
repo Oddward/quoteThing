@@ -1,0 +1,82 @@
+<main style="padding: 1rem;">
+  <div id="the-design" [ngStyle]="{'background': bgcolour}">
+    <app-quote-window #qt
+      [quoteOut]="quote"
+      [quoteclr]="quotecolour"
+      [qFont]="quotefont"
+      [authorclr]="authorcolour"
+      [authorOut]="author"
+      [aFont]="authorfont"></app-quote-window>
+  </div>
+  <div id="the-config">
+    <section>
+      <article>
+        <h1 class="acterum">Quotinator</h1>
+        <p style="font-family: sans-serif;">Design fancy quotes with a simple interface.</p>
+      </article>
+    </section>
+    <section>
+      <div class="v-gapped row">
+        <div>
+          <!-- QUOTE CONFIG -->
+          <label for="quote" class="top-label">Quote</label>
+          <textarea name="quote" cols="30" rows="10" class="txtbox block"
+            [(ngModel)]="quote"
+            #ctrl="ngModel"
+            (change)="qt.quoteOut = quote"
+            >{{ quote }}</textarea>
+          <select [(ngModel)]="quotefont">
+            <option *ngFor="let font of fonts" [value]="font">{{ font }}</option>
+          </select>
+          <input type="range" name="qsize" value="40" [(ngModel)]="qt.qfsize" #ctrl="ngModel">
+        </div>
+        <div>
+          <input type="color" name="quoteclr" class="color-butt" value="#ffffff" [(ngModel)]="quotecolour" #ctrl="ngModel" >
+        </div>
+      </div>
+      <div class="v-gapped row">
+        <div>
+          <!-- AUTHOR CONFIG -->
+          <label for="author" class="top-label">Author</label>
+          <textarea name="author" cols="30" rows="2" class="txtbox block"
+            [(ngModel)]="author"
+            #ctrl="ngModel"
+            (change)="qt.authorOut = author"
+            >{{ author }}</textarea>
+          <select [(ngModel)]="authorfont">
+            <option *ngFor="let item of fonts" [value]="item" class="{{item}}">{{ item }}</option>
+          </select>
+          <input type="range" name="asize" value="40" [(ngModel)]="qt.afsize" #ctrl="ngModel">
+        </div>
+        <div>
+          <input type="color" name="authorclr" class="color-butt" value="#eeeeee" [(ngModel)]="authorcolour" #ctrl="ngModel">
+        </div>
+      </div>
+    </section>
+    <hr>
+    <section>
+      <h2 class="top-label acterum">Background</h2>
+      <ul>
+        <i></i>
+      </ul>
+      <label for="bgcolour" class="top-label">Colour</label>
+      <input type="color" name="bgcolour" id="" class="color-butt" [(ngModel)]="bgcolour" #ctrl="ngModel">
+    </section>
+    <hr>
+    <section>
+      <h2 class="top-label">Border</h2>
+      <div>
+        <label for="border-width" class="top-label">Width</label>
+        <input type="range" name="border-width" [(ngModel)]="qt.bwidth">
+      </div>
+      <div>
+        <label for="border-clr" class="top-label">Colour</label>
+        <input type="color" name="border-clr" [(ngModel)]="qt.bclr">
+      </div>
+      <div>
+        <label for="border-rad" class="top-label">Curve</label>
+        <input type="range" name="border-rad" [(ngModel)]="qt.bradius">
+      </div>
+    </section>
+  </div>
+</main>

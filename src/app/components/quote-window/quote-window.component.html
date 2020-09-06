@@ -1,0 +1,16 @@
+<div style="width: 100%; height: 100%;" [ngStyle]="{'background': bgclr}">
+  <blockquote [ngStyle]="{
+    'border-width': bwidth + 'px',
+    'border-color': bclr,
+    'border-radius': bradius + 'px' }">
+    <p class="block {{ qFont }}" [ngStyle]="{
+      'color': quoteclr,
+      'font-size': qfsize + 'pt'}">{{ quoteOut }}</p>
+    <span class="mark mark-tl" [ngStyle]="{'display': markTL ? 'inline-block':'none'}"></span>
+    <span class="mark mark-br" [ngStyle]="{'display': markBR ? 'inline-block':'none'}"></span>
+    <footer class="citation block {{ aFont }}" [ngStyle]="{
+      'color': authorclr,
+      'font-size': afsize + 'pt',
+      'text-align': aAlign }">{{ authorOut }}</footer>
+  </blockquote>
+</div>

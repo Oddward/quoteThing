@@ -1,0 +1,69 @@
+.txtbox{
+  border-radius: .25rem;
+  background-color: #00000011;
+  box-shadow: 2px 2px 8px #00000022 inset;
+  color: #333;
+  padding: 10px;
+}
+.v-gapped{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.hide{
+  display: none;
+}
+main{
+  padding: 1rem;
+  background: white;
+  display: grid;
+  grid-template-areas: 'display display config';
+  grid-template-columns: 7fr 3fr;
+  // grid-template-columns: 8fr 2fr;
+  width: 100%;
+}
+h1{
+  font-size: 5rem;
+  margin: 1rem auto;
+}
+#the-design{
+  grid-area: display;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#the-config{
+  grid-area: config;
+  padding: 2rem;
+  color: #222;
+  position: relative;
+  right: 0;
+}
+.row{
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  // grid-template-columns: ;
+}
+.top-label{
+  display: block;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin: .5rem;
+}
+.color-butt{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  padding: -.25rem;
+  background: white;
+  border: 2px black solid;
+  margin-top: 2.5rem;
+}
+input[type="color"]{
+  overflow: hidden;
+}
+select{
+  padding: .25rem;
+  margin: .25rem;
+  border-radius: .25rem;
+}
